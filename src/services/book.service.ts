@@ -12,11 +12,11 @@ export async function findBooks(title: string, authors: string[], cursor: string
     }
 
     if (title) {
-      query.title = { $regex: title, $options: 'i' }; // 'i' for case-insensitive
+      query.title = { $regex: title, $options: 'i' };
     }
 
     if (authors) {
-      query.authors = { $regex: authors, $options: 'i' }; // Assuming authors is a string field, otherwise adjust
+      query.authors = { $regex: authors, $options: 'i' };
     }
 
     const books = await booksCollection

@@ -37,7 +37,7 @@ export async function fetchBooks(requiredBooks: number): Promise<Book[]> {
     const validBooks = items
       .filter((item: any) => item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.thumbnail)
       .map((item: any) => ({
-        id: uuidv4(), // Generate a unique ID for each book
+        id: uuidv4(),
         title: item.volumeInfo.title,
         authors: item.volumeInfo.authors || [],
         thumbnail: item.volumeInfo.imageLinks.thumbnail,
